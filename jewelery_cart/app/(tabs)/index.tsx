@@ -57,7 +57,7 @@ export default function HomeScreen() {
               key={category.id}
               style={styles.categoryCard}
               onPress={() => {
-                navigation.navigate('CategoryProducts', {
+                navigation.navigate('Explore', {
                   category: category.name,
                   items: category.items
                 });

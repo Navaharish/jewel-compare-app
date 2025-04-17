@@ -12,7 +12,10 @@ const ComparisonScreen = () => {
   const { comparisonItems, removeFromComparison } = useComparison();
   const navigation = useNavigation<NavigationProp>();
 
+  
+
   if (comparisonItems.length === 0) {
+    console.log(comparisonItems,"0");
     return (
       <View style={styles.emptyContainer}>
         <Text style={styles.emptyText}>No items selected for comparison</Text>
@@ -31,6 +34,7 @@ const ComparisonScreen = () => {
 
   return (
     <View style={styles.container}>
+      
       <View style={styles.header}>
         <Text style={styles.headerTitle}>COMPARISON CHART</Text>
       </View>
@@ -47,7 +51,7 @@ const ComparisonScreen = () => {
                   <Ionicons name="close-circle" size={24} color="#000" />
                 </TouchableOpacity>
                 <Image 
-                  source={typeof item.image === 'string' ? { uri: item.image } : item.image} 
+                  source={item.image} 
                   style={styles.productImage} 
                 />
               </View>
@@ -55,7 +59,7 @@ const ComparisonScreen = () => {
                 <View key={attr.key} style={styles.attributeRow}>
                   <Text style={styles.label}>{attr.label}</Text>
                   <Text style={styles.value}>
-                    {item[attr.key as keyof typeof item]}
+                    {String(item[attr.key as keyof typeof item])}
                   </Text>
                 </View>
               ))}

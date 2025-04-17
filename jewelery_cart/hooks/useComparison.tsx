@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { ImageSourcePropType } from 'react-native';
 
 interface JewelryItem {
   id: string;
-  image: string;
+  image: ImageSourcePropType;
   productType: string;
   goldKaratage: number;
   goldWeight: number;

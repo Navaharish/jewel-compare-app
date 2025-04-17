@@ -8,7 +8,7 @@ import ComparisonButton from '@/components/ComparisonButton';
 const jewelryItems = [
   {
     id: '1',
-    image: '../assets/images/ring1.jpg',
+    image: require('../../assets/images/ring1.jpg'),
     productType: 'Diamond Ring',
     goldKaratage: 18,
     goldWeight: 5.2,
@@ -19,7 +19,7 @@ const jewelryItems = [
   },
   {
     id: '2',
-    image: '../assets/images/ring21.jpg',
+    image: require('../../assets/images/ring3.jpg'),
     productType: 'Gold Ring',
     goldKaratage: 22,
     goldWeight: 4.8,
@@ -78,9 +78,8 @@ export default function ExploreScreen() {
       {filteredItems.map((item) => (
         <ThemedView key={item.id} style={styles.productCard}>
           <Image 
-            source={{ uri: item.image }} 
+            source={item.image}
             style={styles.productImage}
-            defaultSource={require('../../assets/images/ring3.jpg')}
           />
           <ThemedView style={styles.productDetails}>
             <ThemedText type="subtitle" style={styles.productTitle}>{item.productType}</ThemedText>

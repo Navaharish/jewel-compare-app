@@ -8,6 +8,10 @@ export type RootStackParamList = {
     category: string; 
     items: Product[];
   };
+  'Explore': {
+    category: string;
+    items: Product[];
+  };
   'ProductDetail': {
     id: string;
   };
